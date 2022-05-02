@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime _js
+
+<PageTitle>yume-ayasaki</PageTitle>
+
+<div class="page">
+@*    <div class="sidebar">
+        <NavMenu />
+    </div>*@
+
+    <main>
+        <div class="top-row">
+            <div style="width: 100%; display: grid; column-count: 12; column-gap: 10px; align-items: center">
+                <div style="grid-column: 2 / 4; align-self: center; justify-self: center">
+                    <a href="/">
+                        <img src="/icon/Logo.svg" alt="..." class="rounded-circle" style="width: 50px" />@*Logo*@    
+                    </a>
+                    <div style="display: inline">yume ayasaki</div>
+                </div>                
+                <a href="/about" style="grid-column: 4 / 5">About me</a>
+                <a href="/ama" style="grid-column: 5 / 7">Ask me anything</a>
+                <div style="grid-column: 7 / 12"></div>
+                <audio preload="auto" controls loop autobuffer autoplay>
+                    <source src="snd/bg.mp3" type="audio/mp3" />
+                </audio>
+                @*<input style="grid-column: 7 / 12; background-color: #C4C4C4; border-radius: 10px">*@
+                <div style="grid-column: 12 / 13"></div>
+                @*<a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>*@
+            </div>
+            
+        </div>
+
+        @Body
+
+        @*<article class="content">
+            
+        </article>*@
+    </main>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,37 @@
+﻿@using System.Timers
+
+<div className='time-clock'>
+    <p style="font-size: 36px" >
+        @timeString
+    </p>
+        </div>
+
+@code {
+    private string timeString = "";
+    System.Timers.Timer aTimer = new System.Timers.Timer();
+
+    protected override void OnInitialized()
+    {
+        Tick();
+        Console.WriteLine("Init timer");
+        aTimer.Elapsed += new ElapsedEventHandler(TickTimer);
+        aTimer.Interval = 1000;
+        aTimer.Enabled = true;
+    }
+
+    private void Tick()
+    {
+        timeString = DateTime.Now.ToString();
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void TickTimer(object? source, ElapsedEventArgs e)
+    {
+        Tick();
+    }
+
+    //public void Dispose()
+    //{
+    //    aTimer?.Dispose();
+    //}
+}

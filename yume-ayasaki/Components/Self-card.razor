@@ -1,0 +1,55 @@
+﻿@using yume_ayasaki.Data
+
+<div style="height: 500px; background-color: #EED372">
+    <div>
+        <div style="display: grid; column-count: 12; column-gap: 10px; padding-top: 30px; padding-bottom: 30px">
+            <div style="grid-column: 1/2"></div>
+            <img class="rounded-circle" style="grid-column: 2/5; width: 225px; align-self: center; justify-self: center" src=@card.Img alt="Avatar" />
+            <div style="grid-column: 5/12">
+                <div style="font-weight: 700; font-size: 80px; text-align: center">Adventure card</div>
+                <div style="display: flex">
+                    @*Name*@
+                    <div style="width: 50%; display: flex; align-items: center; height: 50px">
+                        <div style="font-weight: 500; font-size: 20px">Name:&nbsp;</div>
+                        <div style="font-weight: 700; font-size: 30px; font-family: 'iCiel Cucho'">@card.Name</div>
+                    </div>
+                    @*Class*@
+                    <div style="width: 50%; display: flex; align-items: center; height: 50px">
+                        <div style="font-weight: 500; font-size: 20px">Class:&nbsp;</div>
+                        <div style="font-weight: 700; font-size: 30px; font-family: 'iCiel Cucho'">@card.Job</div>
+                    </div>
+                </div>
+                @*Title*@
+                <div style="display: flex; align-items: center; height: 50px">
+                    <div style="font-weight: 500; font-size: 20px">Title:&nbsp;</div>
+                    <div style="font-weight: 700; font-size: 30px; font-family: 'iCiel Cucho'">@card.Title</div>
+                </div>
+                @*Skill*@
+                <div style="display: flex; align-items: center; height: 50px">
+                    <div style="font-weight: 500; font-size: 20px">Skill:&nbsp;</div>
+                    <div style="font-weight: 700; font-size: 30px; font-family: 'iCiel Cucho'">@card.Skill</div>
+                </div>
+            </div>
+            <div style="grid-column: 12/13"></div>
+        </div>
+        <div style="padding: 25px 75px 25px 75px"> @*TRBL*@
+            <div style="padding: 20px; background-color: #C4C4C4; border-radius: 10px">
+                <div>
+                    "@card.Quote?.quote"
+                </div>
+                <div style="justify-self: end; text-align: end">
+                    - @card.Quote?.character, @card.Quote?.anime -
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    Card card = new Card();
+
+    protected override async Task OnInitializedAsync()
+    {
+        card = await CardService.GetCard();
+    }
+}
