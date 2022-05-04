@@ -4,18 +4,18 @@
             @if (!Flip)
             {
                 string filename = SectionName + ".svg";
-                <div style="display: flex; padding-left: 70px; padding-top: 10px; align-content: center">
-                    <img style="width: 60px; padding: 10px" src=/icon/@filename alt=SectionName/>
-                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 10px">@SectionName</div>
+                <div style="display: flex; padding-left: 70px; align-content: center">
+                    <img style="width: 50px; padding: 5px" src=/icon/@filename alt=SectionName/>
+                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 5px">@SectionName</div>
                 </div>
                 
             }
             else
             {
                 string filename = SectionName + ".svg";
-                <div style="display: flex; padding-right: 70px; padding-top: 10px; align-content: center; justify-content: end">
-                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 10px">@SectionName</div>
-                    <img style="width: 60px; padding: 10px" src=/icon/@filename alt=SectionName/>
+                <div style="display: flex; padding-right: 70px; align-content: center; justify-content: end">
+                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 5px">@SectionName</div>
+                    <img style="width: 50px; padding: 5px" src=/icon/@filename alt=SectionName/>
                 </div>
             }
             @ChildContent
