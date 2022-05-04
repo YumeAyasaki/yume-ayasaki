@@ -1,10 +1,24 @@
 ﻿<div style="padding-top: 60px; padding-bottom: 40px; display: grid">
     <div style="width: 100%">
         <div style="width: 80%; height: 300px; background-color: #C4C4C4; border-radius: 75px; @checkFlip()">
-            <div style="padding: 30px">
-                <h1>@SectionName</h1>
-                @ChildContent
-            </div>
+            @if (!Flip)
+            {
+                string filename = SectionName + ".svg";
+                <div style="display: flex; padding-left: 70px; padding-top: 10px; align-content: center">
+                    <img style="width: 60px; padding: 10px" src=/icon/@filename alt=SectionName/>
+                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 10px">@SectionName</div>
+                </div>
+                
+            }
+            else
+            {
+                string filename = SectionName + ".svg";
+                <div style="display: flex; padding-right: 70px; padding-top: 10px; align-content: center; justify-content: end">
+                    <div style="display: inline; font-size: 48px; font-weight: 700; padding: 10px">@SectionName</div>
+                    <img style="width: 60px; padding: 10px" src=/icon/@filename alt=SectionName/>
+                </div>
+            }
+            @ChildContent
         </div>
     </div>
 </div>
